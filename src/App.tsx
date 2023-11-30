@@ -4,6 +4,7 @@ import ChuckCard from "./components/chuck_card";
 import ChuckInfo from "./components/chuck_info";
 import ChuckJokes from "./components/chuck_jokes";
 import Joke from "./joke";
+import ChuckJokesFiltered from "./components/chuck_jokes_filtered";
 
 function App() {
   const [chuckGreeting, setChuckGreeting] = useState<string>(
@@ -29,6 +30,7 @@ function App() {
       joke: "Chuck Norris does not own a stove, oven, or microwave, because revenge is a dish best served cold.",
     },
   ]);
+  const filteredJokes = 3;
 
   return (
     <div className="App">
@@ -40,6 +42,8 @@ function App() {
 
       <h2>Jokes: </h2>
       <ChuckJokes jokes={jokes} />
+      <h2>Filtered Jokes: </h2>
+      <ChuckJokesFiltered jokes={jokes} filteredJokes={filteredJokes} />
     </div>
   );
 }
